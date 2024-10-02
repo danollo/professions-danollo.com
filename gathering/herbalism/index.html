@@ -31,7 +31,16 @@
                     <p>Bountiful Harvests 5/40</p>
                 </li>
                 <li>
-                    <p>CARNIVOROUS CONNOISSEUR 40/40 (IF FARMING IN RINGING DEEPS) | Spear Scavenger 40/40 (if NOT)</p>
+                    <input type="radio" name="kpFlowerChoices" id="isleofdornkp" value="Isle of Dorn" onclick="updateChoice()"/>
+                    <label for="isleofdornkp">Isle of Dorn</label>
+                    <input type="radio" name="kpFlowerChoices" id="hallowfallkp" value="Hallowfall" onclick="updateChoice()"/>
+                    <label for="hallowfallkp">Hallowfall</label>
+                    <input type="radio" name="kpFlowerChoices" id="ringingdeepskp" value="The Ringing Deeps" onclick="updateChoice()"/>
+                    <label for="ringingdeepskp">The Ringing Deeps</label>
+                    <input type="radio" name="kpFlowerChoices" id="azjkahetkp" value="Azj-Kahet" onclick="updateChoice()"/>
+                    <label for="azjkahetkp">Azj-Kahet</label>
+                    <br>
+                    <p id="kpflowerchoicesanswer">WHICH ZONE DO YOU WANT TO PICK FLOWERS IN?</p>
                 </li>
                 <li>
                     <p>Bountiful Harvests 40/40</p>
@@ -57,6 +66,7 @@
         </div>
     </main>
     <script>
+        let kpflowerChoices = document.getElementById("kpflowerchoicesanswer");
         function routesShow() {
             var x = document.getElementById("routesdiv");
             if (x.style.display === "none") {
@@ -65,6 +75,18 @@
                 x.style.display = "none";
             }
         }
+        function updateChoice(){
+            const kpflowerChoices = document.getElementById("kpflowerchoicesanswer");
+        if(document.getElementById("isleofdornkp").checked){
+            kpflowerChoices.innerText = "Spear Scavenger 40/40 THEN Fungus Forager 40/40"
+        }else if(document.getElementById("hallowfallkp").checked){
+            kpflowerChoices.innerText = "Spear Scavenger 40/40"
+        }else if(document.getElementById("ringingdeepskp").checked){
+            kpflowerChoices.innerText = "Carnivorous Connoisseur 40/40 THEN Spear Scavenger 40/40"
+        }else if(document.getElementById("azjkahetkp").checked){
+            kpflowerChoices.innerText = "Carnivorous Connoisseur 40/40 THEN Orbinid Observer 40/40 (very unsure but sounds like crazy cookin to me)"
+    }
+}
     </script>
 </body>
 </html>

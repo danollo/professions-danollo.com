@@ -1,20 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./acuity.html",
-    "./all-professions.html",
-    "./new/*.html",
-    "./crafting/**/*.{html,js}",
-    "./gathering/**/*.{html,js}",
-  ],
+  content: ["./index.html", "./acuity.html", "./all-professions.html", "./new/*.html", "./crafting/**/*.{html,js}", "./gathering/**/*.{html,js}", "./*/components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: [
-    require('daisyui'), // Add DaisyUI plugin
-  ],
+    require('@tailwindcss/typography'),
+    require('daisyui')],
   daisyui: {
-    themes: ["light", "dark", "sunset"],
-  },
-}
+    themes: ["lemonade", "coffee"],
+    lightTheme: "lemonade",
+    darkTheme: "coffee"
+  }
+};

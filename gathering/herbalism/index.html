@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Herbalism Guide</title>
-    <link href="/dist/styles.css" rel="stylesheet">
+    <link href="/dist/styles.css" rel="stylesheet" />
     <style>
       .transition {
         transition: background-color 0.2s ease, color 0.2s ease;
@@ -13,11 +13,22 @@
   </head>
   <body>
     <main>
-        <div class="flex w-full flex-col lg:flex-row">
-            <div class="card bg-base-300 rounded-box grid h-32 flex-grow place-items-center"><a role="button" class="btn btn-xs btn-secondary" href="../../index.html">GO BACK</a></div>
-            <div class="divider lg:divider-horizontal"></div>
-            <div class="card bg-base-300 rounded-box grid h-32 flex-grow place-items-center">Herbalism Guide</div>
-          </div>
+      <div class="flex w-full flex-col lg:flex-row">
+        <div
+          class="card bg-base-300 rounded-box grid h-32 flex-grow place-items-center">
+          <a
+            role="button"
+            class="btn btn-xs btn-secondary"
+            href="../../index.html"
+            >GO BACK</a
+          >
+        </div>
+        <div class="divider lg:divider-horizontal"></div>
+        <div
+          class="card bg-base-300 rounded-box grid h-32 flex-grow place-items-center">
+          Herbalism Guide
+        </div>
+      </div>
       <div class="container mx-auto">
         <p>
           Best Herbalism stat: Finesse, more consistent chance to find MORE
@@ -40,51 +51,50 @@
               Choose Your Flower Picking Zone:
             </h3>
             <div class="form-control">
-                <label class="label cursor-pointer">
-                  <span class="label-text">Isle of Dorn</span>
-                  <input
-                    class="radio"
-                    type="radio"
-                    name="kpFlowerChoices"
-                    value="Isle of Dorn"
-                    onclick="updateChoice()" />
-                </label>
-                <label class="label cursor-pointer">
-                  <span class="label-text">Hallowfall</span>
-                  <input 
-                    class="radio"
-                    type="radio"
-                    name="kpFlowerChoices"
-                    value="Hallowfall"
-                    onclick="updateChoice()" />
-                </label>
-                <label class="label cursor-pointer">
-                  <span class="label-text">The Ringing Deeps</span>
-                  <input
-                    class="radio"
-                    type="radio"
-                    name="kpFlowerChoices"
-                    value="The Ringing Deeps"
-                    onclick="updateChoice()" />
-                </label>
-                <label class="label cursor-pointer">
-                  <span class="label-text">Azj-Kahet</span>
-                  <input
-                    class="radio"
-                    type="radio"
-                    name="kpFlowerChoices"
-                    value="Azj-Kahet"
-                    onclick="updateChoice()" />
-                </label>
-              </div>
-            
+              <label class="label cursor-pointer">
+                <span class="label-text">Isle of Dorn</span>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="kpFlowerChoices"
+                  value="Isle of Dorn"
+                  onclick="updateChoice()" />
+              </label>
+              <label class="label cursor-pointer">
+                <span class="label-text">Hallowfall</span>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="kpFlowerChoices"
+                  value="Hallowfall"
+                  onclick="updateChoice()" />
+              </label>
+              <label class="label cursor-pointer">
+                <span class="label-text">The Ringing Deeps</span>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="kpFlowerChoices"
+                  value="The Ringing Deeps"
+                  onclick="updateChoice()" />
+              </label>
+              <label class="label cursor-pointer">
+                <span class="label-text">Azj-Kahet</span>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="kpFlowerChoices"
+                  value="Azj-Kahet"
+                  onclick="updateChoice()" />
+              </label>
+            </div>
+
             <p id="choice-output" class="mt-2"></p>
           </li>
-          
+
           <li>Bountiful Harvests 40/40</li>
         </ul>
       </section>
-    
 
       <a id="acuity-guide" href="/professions.danollo.com/acuity.html"
         >Acuity Shuffle Guide</a
@@ -180,22 +190,26 @@
           routesDiv.style.display === "none" ? "block" : "none";
       }
       const choices = {
-  "Isle of Dorn": "Spear Scavenger 40/40 -> Fungus Forager 40/40",
-  "Hallowfall": "Spear Scavenger 40/40",
-  "The Ringing Deeps": "Carnivorous Connoisseur 40/40 -> Spear Scavenger 40/40",
-  "Azj-Kahet": "Carnivorous Connoisseur 40/40 -> Orbinid Observer 40/40 (very unsure but sounds like crazy cookin to me)",
-};
-function updateChoice() {
-  const selectedRadio = document.querySelector('input[name="kpFlowerChoices"]:checked');
+        "Isle of Dorn": "Spear Scavenger 40/40 -> Fungus Forager 40/40",
+        Hallowfall: "Spear Scavenger 40/40",
+        "The Ringing Deeps":
+          "Carnivorous Connoisseur 40/40 -> Spear Scavenger 40/40",
+        "Azj-Kahet":
+          "Carnivorous Connoisseur 40/40 -> Orbinid Observer 40/40 (very unsure but sounds like crazy cookin to me)",
+      };
+      function updateChoice() {
+        const selectedRadio = document.querySelector(
+          'input[name="kpFlowerChoices"]:checked'
+        );
 
-  if (selectedRadio) {
-    const selectedValue = selectedRadio.value;
-    const description = choices[selectedValue];
+        if (selectedRadio) {
+          const selectedValue = selectedRadio.value;
+          const description = choices[selectedValue];
 
-    const outputElement = document.getElementById('choice-output');
-    outputElement.textContent = `${selectedValue}: ${description}`;
-  }
-}
+          const outputElement = document.getElementById("choice-output");
+          outputElement.textContent = `${selectedValue}: ${description}`;
+        }
+      }
 
       function copyToClipboard(inputId, button) {
         const input = document.getElementById(inputId);

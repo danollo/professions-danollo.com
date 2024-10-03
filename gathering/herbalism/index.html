@@ -13,10 +13,11 @@
   </head>
   <body>
     <main>
-        <a class="btn btn-secondary" href="../../index.html">GO BACK</a>
-        <div class="text-center text-4xl">
-          <h1>Herbalism Guide</h1>
-        </div>
+        <div class="flex w-full flex-col lg:flex-row">
+            <div class="card bg-base-300 rounded-box grid h-32 flex-grow place-items-center"><a role="button" class="btn btn-xs btn-secondary" href="../../index.html">GO BACK</a></div>
+            <div class="divider lg:divider-horizontal"></div>
+            <div class="card bg-base-300 rounded-box grid h-32 flex-grow place-items-center">Herbalism Guide</div>
+          </div>
       <div class="container mx-auto">
         <p>
           Best Herbalism stat: Finesse, more consistent chance to find MORE
@@ -39,49 +40,51 @@
               Choose Your Flower Picking Zone:
             </h3>
             <div class="form-control">
-              <label class="label cursor-pointer">
-                <input
-                  class="radio"
-                  type="radio"
-                  name="kpFlowerChoices"
-                  value="Isle of Dorn"
-                  onclick="updateChoice()" />
-                Isle of Dorn
-              </label>
-              <label class="label cursor-pointer">
-                <input 
-                  class="radio"
-                  type="radio"
-                  name="kpFlowerChoices"
-                  value="Hallowfall"
-                  onclick="updateChoice()" />
-                Hallowfall
-              </label>
-              <label class="label cursor-pointer">
-                <input
-                  class="radio"
-                  type="radio"
-                  name="kpFlowerChoices"
-                  value="The Ringing Deeps"
-                  onclick="updateChoice()" />
-                The Ringing Deeps
-              </label>
-              <label class="label cursor-pointer">
-                <input
-                  class="radio"
-                  type="radio"
-                  name="kpFlowerChoices"
-                  value="Azj-Kahet"
-                  onclick="updateChoice()" />
-                Azj-Kahet
-              </label>
-            </div>
+                <label class="label cursor-pointer">
+                  <span class="label-text">Isle of Dorn</span>
+                  <input
+                    class="radio"
+                    type="radio"
+                    name="kpFlowerChoices"
+                    value="Isle of Dorn"
+                    onclick="updateChoice()" />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">Hallowfall</span>
+                  <input 
+                    class="radio"
+                    type="radio"
+                    name="kpFlowerChoices"
+                    value="Hallowfall"
+                    onclick="updateChoice()" />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">The Ringing Deeps</span>
+                  <input
+                    class="radio"
+                    type="radio"
+                    name="kpFlowerChoices"
+                    value="The Ringing Deeps"
+                    onclick="updateChoice()" />
+                </label>
+                <label class="label cursor-pointer">
+                  <span class="label-text">Azj-Kahet</span>
+                  <input
+                    class="radio"
+                    type="radio"
+                    name="kpFlowerChoices"
+                    value="Azj-Kahet"
+                    onclick="updateChoice()" />
+                </label>
+              </div>
+            
             <p id="choice-output" class="mt-2"></p>
           </li>
           
           <li>Bountiful Harvests 40/40</li>
         </ul>
       </section>
+    
 
       <a id="acuity-guide" href="/professions.danollo.com/acuity.html"
         >Acuity Shuffle Guide</a
